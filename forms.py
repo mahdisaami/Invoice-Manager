@@ -3,8 +3,8 @@ from wtforms import validators
 
 
 class LoginForm(wtforms.Form):
-    email = wtforms.StringField('Email')
-    password = wtforms.PasswordField('Password')
+    email = wtforms.StringField('Email', validators=[validators.DataRequired()])
+    password = wtforms.PasswordField('Password',  validators=[validators.DataRequired()])
 
     def validate(self, *args, **kwargs):
         from models import User

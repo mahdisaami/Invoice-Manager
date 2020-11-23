@@ -1,4 +1,4 @@
-from khayyam3 import JalaliDate
+from khayyam import JalaliDate
 from rtl import rtl
 
 from local_settings import DEFAULT_URL, DEFAULT_ADDRESS

@@ -10,7 +10,7 @@ from utils import extract_data
 bp = Blueprint('main_pages', __name__)
 
 
-@bp.route('/invoice_template/')
+@bp.route('/invoice_template/', methods=['GET', 'POST'])
 @login_required
 def invoice_template():
     from models import Invoice
@@ -19,10 +19,10 @@ def invoice_template():
         return 'wrong parameters sent'
     invoice = Invoice.query.filter(invoice_id == invoice_id).first()
     factor_data = extract_data(invoice)
-    return render_template('invoice_template', **factor_data)
+    return render_template('invoice_template.html', **factor_data)
 
 
-@bp.route('/invoice_print/')
+@bp.route('/invoice_print/', methods=['GET', 'POST'])
 @login_required
 def invoice_factor():
     from models import Invoice

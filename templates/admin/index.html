@@ -1,0 +1,13 @@
+{% extends "admin/master.html" %}
+
+{% block body %}
+  <p>Hello {{g.user.email}}</p>
+{% endblock %}
+
+{% block menu_links %}
+
+  <ul class="nav navbar-nav pull-right"><li><a href="{{ url_for('main_pages.logout', next=request.path) }}"
+                                               class="btn btn-danger">Logout</a></li></ul>
+
+
+{% endblock %}
